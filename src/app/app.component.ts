@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Product } from './models/product.model';
+import {MatPaginatorModule} from '@angular/material/paginator';
 @Component({
   selector: 'app-root',
   standalone: true,

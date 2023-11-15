@@ -8,6 +8,28 @@
     border-radius: 4px;
     overflow: hidden;
   }
+  .demo-toggles {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .demo-toggles * {
+    margin-bottom: 16px;
+  }
+  
+  .demo-options {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+  }
+  
+  .demo-data * {
+    margin: 16px 0;
+  }
+  
+  .demo-paginator {
+    width: 600px;
+  }
   
   .example-box {
     padding: 20px 10px;
