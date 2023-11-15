@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Product } from './models/product.model';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MyService } from './services/my.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -13,8 +13,18 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 })
 export class AppComponent {
   title = 'kmkCase';
-  product:Product[]=[];
-  drop(event: CdkDragDrop<{title: string; description: string}[]>) {
+  public product:Product[]=[];
+  constructor(
+    private _service:MyService
+  ){}
+  ngOnInit(): void {
+    this.getList();
+  }
+  // Ürünleri listele
+  getList() {
+    this._service.get((res) => this.product = res)
+  }
+  drop(event: CdkDragDrop<{title: string;image: string}[]>) {
     moveItemInArray(this.product, event.previousIndex, event.currentIndex);
   }
 }
