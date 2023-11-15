@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import { Product } from './models/product.model';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -10,4 +12,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'kmkCase';
+  product:Product[]=[];
+  drop(event: CdkDragDrop<{title: string; poster: string}[]>) {
+    moveItemInArray(this.product, event.previousIndex, event.currentIndex);
+  }
 }

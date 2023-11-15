@@ -2,6 +2,14 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "../environments/environment.prod";
 import { ErrorService } from "./error.service";
+import {
+  CdkDragDrop,
+  CdkDropList,
+  CdkDragPreview,
+  CdkDrag,
+  moveItemInArray,
+} from '@angular/cdk/drag-drop';
+
 @Injectable({
   providedIn: 'root'
 })
