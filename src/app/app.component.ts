@@ -13,7 +13,7 @@ import { Product } from './models/product.model';
 export class AppComponent {
   title = 'kmkCase';
   product:Product[]=[];
-  drop(event: CdkDragDrop<{title: string; poster: string}[]>) {
+  drop(event: CdkDragDrop<{title: string; description: string}[]>) {
     moveItemInArray(this.product, event.previousIndex, event.currentIndex);
   }
 }
